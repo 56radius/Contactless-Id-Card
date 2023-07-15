@@ -1,4 +1,3 @@
-import React, { useLayoutEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -12,35 +11,46 @@ import {
   SafeAreaView,
   Button,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.mainView}>
-      <View style={styles.topView}>
+      <LinearGradient
+        colors={["#9F9F9F", "#4E4E4E", "#000000"]}
+        style={styles.topView}
+      >
         <Text
           style={{
             color: "#fff",
-            fontSize: 20,
-            fontFamily: "SF Pro Display",
+            fontSize: 35,
             fontWeight: "bold",
-            marginTop: 150,
+            position: "relative",
+            top: 200,
+            left: 40,
             marginVertical: 20,
           }}
         >
           Welcome back
+          {"\n"}
+          <Text style={{ fontSize: 10 }}>
+            Please enter your details carefully to continue
+          </Text>
         </Text>
+
         {/* mountain top university image */}
         <Image
           source={require("../.././assets/mtu.png")}
           style={{
-            height: "20%",
-            width: "30%",
+            height: "15%",
+            width: "20%",
             position: "relative",
-            top: 130,
+            top: 100,
+            left: -20,
           }}
         />
-      </View>
-
+      </LinearGradient>
+      {/* Bottom View where it will contain  */}
       <View style={styles.bottomView}></View>
     </View>
   );
@@ -57,7 +67,6 @@ const styles = StyleSheet.create({
   topView: {
     width: "100%",
     height: "70%",
-    backgroundColor: "blue",
     flexDirection: "row",
     justifyContent: "space-between",
   },
