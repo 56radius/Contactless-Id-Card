@@ -1,3 +1,4 @@
+import React, { useLayoutEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -12,41 +13,62 @@ import {
   Button,
 } from "react-native";
 
-import {
-  MaterialCommunityIcons,
-  AntDesign,
-  Ionicons,
-  FontAwesome5,
-} from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
-
 export default function HomeScreen({ navigation }) {
   return (
-    <View>
-      <LinearGradient style={{}} colors={["#9F9F9F", "#4E4E4E", "#000000"]}>
-        <View style={styles.TopView}></View>
-      </LinearGradient>
-      <View style={styles.BottomView}></View>
+    <View style={styles.mainView}>
+      <View style={styles.topView}>
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: 20,
+            fontFamily: "SF Pro Display",
+            fontWeight: "bold",
+            marginTop: 150,
+            marginVertical: 20,
+          }}
+        >
+          Welcome back
+        </Text>
+        {/* mountain top university image */}
+        <Image
+          source={require("../.././assets/mtu.png")}
+          style={{
+            height: "20%",
+            width: "30%",
+            position: "relative",
+            top: 130,
+          }}
+        />
+      </View>
+
+      <View style={styles.bottomView}></View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   mainView: {
-    marginTop: 40,
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   },
 
-  TopView: {
+  topView: {
     width: "100%",
-    height: "40%",
+    height: "70%",
+    backgroundColor: "blue",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 
-  BottomView: {
+  bottomView: {
     width: "100%",
-    height: "75%",
+    height: "70%",
+    position: "relative",
+    marginTop: -180,
+    backgroundColor: "#fff",
+    borderTopLeftRadius: 1000,
+    borderTopRightRadius: 1000,
   },
 });
