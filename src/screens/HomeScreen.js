@@ -10,6 +10,7 @@ import {
   ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import DashboadScreen from "./DashboardScreen";
 
 export default function HomeScreen({ navigation }) {
   return (
