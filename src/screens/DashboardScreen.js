@@ -15,7 +15,7 @@ import ProfileScreen from "./ProfileScreen";
 const Tab = createBottomTabNavigator();
 
 /* Home Screen */
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View
       style={{
@@ -35,7 +35,12 @@ function HomeScreen() {
           flexDirection: "row",
         }}
       >
-        <Ionicons name="notifications" size={37} color="black" />
+        <Ionicons
+          style={{ position: "relative", left: -15 }}
+          name="notifications"
+          size={37}
+          color="black"
+        />
         <FontAwesome5
           name="user-circle"
           size={37}
