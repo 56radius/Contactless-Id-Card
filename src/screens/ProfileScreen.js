@@ -139,7 +139,7 @@ export default function ProfileScreen({ navigation }) {
       </View>
 
       {/* Hall of Residence */}
-      <View style={{ marginLeft: -253, marginTop: 14 }}>
+      <View style={{ marginLeft: -235, marginTop: 14 }}>
         <Text
           style={{
             fontSize: 12,
@@ -156,7 +156,9 @@ export default function ProfileScreen({ navigation }) {
             justifyContent: "center",
           }}
         >
-          <Text style={{ color: "#616161" }}>New Daniel Hall</Text>
+          <Text style={{ color: "#616161", fontSize: 17 }}>
+            New Daniel Hall
+          </Text>
         </View>
       </View>
     </View>
