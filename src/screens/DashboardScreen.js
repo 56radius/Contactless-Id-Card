@@ -18,6 +18,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Platform,
 } from "react-native";
 import ProfileScreen from "./ProfileScreen";
 import { LinearGradient } from "expo-linear-gradient";
@@ -118,7 +119,7 @@ function HomeScreen({ navigation }) {
         {/* Button */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("")}
+          onPress={() => navigation.navigate("AddCash")}
         >
           <Text style={styles.buttonText}> Add Cash </Text>
         </TouchableOpacity>
@@ -194,9 +195,9 @@ function HomeScreen({ navigation }) {
             <Text style={{ top: 5 }}> You funded Your Card </Text>
           </View>
 
-          <Text style={{ fontSize: 13 }}> 10:15am </Text>
+          <Text style={{ fontSize: 13, top: 5, left: -24 }}> 10:15am </Text>
 
-          <Text style={{ color: "green" }}> +#3000</Text>
+          <Text style={{ color: "green", top: 5 }}> +#3000</Text>
         </View>
       </LinearGradient>
     </ScrollView>

@@ -6,6 +6,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import DashboardScreen from "./src/screens/DashboardScreen";
 import SignupScreen from "./src/screens/SignupScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import AddCashScreen from "./src/screens/AddCashScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,7 @@ export default function App(navigation) {
           options={{ title: "Sign up" }}
         />
 
+        {/* Profile */}
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
@@ -49,6 +51,19 @@ export default function App(navigation) {
             headerBackTitle: null,
           }}
         />
+
+        {/* Add Cash Screen */}
+        <Stack.Screen
+          name="AddCash"
+          component={AddCashScreen}
+          options={{
+            title: "Add Cash",
+            headerTransparent: true,
+            headerBackTitle: null,
+          }}
+        />
+
+        {/* Manage Card Screen */}
       </Stack.Navigator>
     </NavigationContainer>
   );
