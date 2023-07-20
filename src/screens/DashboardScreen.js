@@ -8,6 +8,7 @@ import {
   FontAwesome5,
   Fontisto,
   MaterialCommunityIcons,
+  Foundation,
 } from "@expo/vector-icons";
 import {
   Image,
@@ -61,7 +62,6 @@ function HomeScreen({ navigation }) {
         </View>
       </View>
 
-      {/* Linear Gradient for the background for the cash and the add cash */}
       <LinearGradient
         colors={["#D9D9D9", "#999999"]}
         style={{
@@ -86,7 +86,14 @@ function HomeScreen({ navigation }) {
           Your Card
         </Text>
 
-        <View style={styles.container}>
+        <View style={styles.Container}>
+          {/* Background Image */}
+          <Image
+            source={require("../.././assets/backgroundcard.png")}
+            style={styles.cardImage}
+            resizeMode="cover"
+          />
+
           {/* Remaining Balance */}
           <View style={styles.balanceContainer}>
             <Text style={styles.balanceText}>Remaining Balance</Text>
@@ -95,9 +102,101 @@ function HomeScreen({ navigation }) {
 
           {/* Card Holder */}
           <Text style={styles.cardHolder}>David Ufot</Text>
-          <Text style={{ fontSize: 12, color: "#fff" }}>
+          <Text
+            style={{
+              fontSize: 12,
+              color: "black",
+              position: "absolute",
+              top: 120,
+              left: 30,
+            }}
+          >
             Student, Computer Science
           </Text>
+        </View>
+
+        {/* Button */}
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("")}
+        >
+          <Text style={styles.buttonText}> Add Cash </Text>
+        </TouchableOpacity>
+
+        {/* Manage Card */}
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#D9D9D9",
+            borderRadius: 15,
+            paddingVertical: 12,
+            paddingHorizontal: 24,
+            position: "absolute",
+            top: 270,
+            left: 190,
+            alignItems: "center",
+          }}
+          onPress={() => navigation.navigate("")}
+        >
+          <Text style={{ color: "black", fontSize: 12, fontWeight: "bold" }}>
+            Manage Card
+          </Text>
+        </TouchableOpacity>
+      </LinearGradient>
+
+      {/* Recent transactions */}
+      <LinearGradient
+        colors={["#D9D9D9", "#999999"]}
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          width: "90%",
+          height: 350,
+          margin: 22,
+          borderRadius: 20,
+        }}
+      >
+        <Text
+          style={{
+            position: "absolute",
+            top: 20,
+            left: 10,
+            bottom: 0,
+            right: 0,
+            fontSize: 20,
+          }}
+        >
+          Recent Transactions
+        </Text>
+
+        {/* Creating the stylng of the transactions */}
+        <View style={styles.thirdContainer}>
+          <View
+            style={{
+              justifyContent: "space-between",
+              flexDirection: "row",
+              position: "relative",
+              left: -40,
+            }}
+          >
+            <View
+              style={{
+                height: 29,
+                borderRadius: 15,
+                width: "15%",
+                left: 20,
+                alignItems: "center",
+                backgroundColor: "#464646",
+              }}
+            >
+              <Foundation name="dollar" size={30} color="#fff" />
+            </View>
+
+            <Text style={{ top: 5 }}> You funded Your Card </Text>
+          </View>
+
+          <Text style={{ fontSize: 13 }}> 10:15am </Text>
+
+          <Text style={{ color: "green" }}> +#3000</Text>
         </View>
       </LinearGradient>
     </ScrollView>
@@ -113,11 +212,11 @@ function TransactionScreen() {
   );
 }
 
-/* Post Screen */
+/* Card Screen */
 function CardsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Welcome to Post screen</Text>
+      <Text>Welcome to Card screen</Text>
     </View>
   );
 }
@@ -155,7 +254,7 @@ function Dashboard() {
         }}
       />
       <Tab.Screen
-        name="Post"
+        name="Cards"
         component={CardsScreen}
         options={{
           tabBarIcon: () => (
@@ -181,14 +280,13 @@ function Dashboard() {
 export default Dashboard;
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     width: 300,
     height: 180,
     padding: 20,
     borderRadius: 12,
-    backgroundColor: "#4E4E4E",
     justifyContent: "flex-end",
-    marginTop: -60,
+    marginTop: 15,
   },
 
   balanceContainer: {
@@ -198,22 +296,55 @@ const styles = StyleSheet.create({
   },
   balanceText: {
     fontSize: 12,
-    color: "#FFFFFF",
+    color: "black",
     position: "absolute",
     left: 155,
-    top: -97,
+    top: -140,
     bottom: 0,
   },
   balanceAmount: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#FFFFFF",
+    color: "black",
     position: "absolute",
     left: 180,
-    top: -80,
+    top: -125,
   },
   cardHolder: {
     fontSize: 16,
-    color: "white",
+    color: "black",
+    position: "absolute",
+    top: 100,
+    left: 30,
+  },
+
+  cardImage: {
+    borderWidth: 0.5,
+    borderColor: "#A8A8A8",
+    borderRadius: 10,
+    backgroundColor: "#fff",
+  },
+
+  button: {
+    backgroundColor: "#D9D9D9",
+    borderRadius: 15,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    position: "absolute",
+    top: 270,
+    left: 55,
+    alignItems: "center",
+  },
+
+  buttonText: {
+    color: "black",
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+
+  thirdContainer: {
+    flex: 0.7,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
