@@ -22,11 +22,14 @@ import {
 } from "react-native";
 import ProfileScreen from "./ProfileScreen";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRoute } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
 /* Home Screen */
 function HomeScreen({ navigation }) {
+  const route = useRoute();
+  const { remainingBalance } = route.params || { remainingBalance: 20400 }; // Replace 30400 with your actual initial balance
   return (
     <ScrollView>
       <View
@@ -98,7 +101,7 @@ function HomeScreen({ navigation }) {
           {/* Remaining Balance */}
           <View style={styles.balanceContainer}>
             <Text style={styles.balanceText}>Remaining Balance</Text>
-            <Text style={styles.balanceAmount}>#30,400</Text>
+            <Text style={styles.balanceAmount}>#{remainingBalance}</Text>
           </View>
 
           {/* Card Holder */}
