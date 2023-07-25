@@ -5,9 +5,12 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Button,
 } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import DashboadScreen from "../screens/DashboardScreen";
 
-export default function LoginForm() {
+export default function LoginForm({ navigation }) {
   return (
     <View style={styles.bottomView}>
       {/* matriculation number */}

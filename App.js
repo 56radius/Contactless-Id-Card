@@ -38,7 +38,7 @@ export default function App(navigation) {
         <Stack.Screen
           name="Signup"
           component={SignupScreen}
-          options={{ title: "Sign up" }}
+          options={{ title: "Sign up", headerShown: false }}
         />
 
         {/* Profile */}

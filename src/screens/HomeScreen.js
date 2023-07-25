@@ -52,7 +52,7 @@ export default function HomeScreen({ navigation }) {
         />
       </LinearGradient>
       {/* Components of the Bottom View where it will contain  */}
-      <LoginForm />
+      <LoginForm navigation={navigation} />
 
       {/* First Timer button */}
       <TouchableOpacity
