@@ -21,6 +21,7 @@ import {
   Platform,
 } from "react-native";
 import ProfileScreen from "./ProfileScreen";
+import TransactionPin from "../components/TransactionPin";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRoute } from "@react-navigation/native";
 
@@ -209,11 +210,7 @@ function HomeScreen({ navigation }) {
 
 /* Search Screen */
 function TransactionScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Welcome to Transaction screen</Text>
-    </View>
-  );
+  return <TransactionPin />;
 }
 
 /* Card Screen */
